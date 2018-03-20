@@ -28,29 +28,27 @@ const config = {
 		},
 
 		{
-			test: /\.scss$/,
+			test: /\.s?css$/,
 			use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            }, {
-                loader: "sass-loader" // compiles Sass to CSS
-            }]
+				loader: "style-loader" // creates style nodes from JS strings
+			}, {
+				loader: "css-loader" // translates CSS into CommonJS
+			}, {
+				loader: "sass-loader" // compiles Sass to CSS
+			}]
 		},
 
-		{
-			test: /\.svg$/,
-			loader: 'url-loader'
+		{ 
+			test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+			loader: 'url-loader?limit=100000' 
 		},
 
 		{
 			test: /\.(png|jpg|gif)$/,
-			use: [
-				{
-					loader: 'file-loader',
-					options: {}  
-				}
-			]
+			use: [{
+				loader: 'file-loader',
+				options: {}  
+			}]
 		}]
 	},
 	plugins: [

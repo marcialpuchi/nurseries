@@ -11,7 +11,8 @@ const config = {
 	entry: APP_DIR + '/index.jsx',
 	output: {
 		path: BUILD_DIR,
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: '/'
 	},
 	resolve: {
 		extensions: ['.js', '.jsx']
@@ -61,7 +62,8 @@ const config = {
 	],
 	devServer: {
 		contentBase: BUILD_DIR,
-		port: 9000
+		port: 9000,
+    historyApiFallback: true
 	}
 };
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import Validator from 'validator';
 import PropTypes from 'prop-types';
 
@@ -58,11 +59,12 @@ class LoginForm extends Component {
           label="Password"
           type="password"
           name="password"
-          placeholder={errors.password}
+          placeholder={errors.password ? errors.email : '********'}
           value={data.password}
           onChange={this.onChange}
         />
-        <Button primary>Login</Button>
+        <Button type="submit" primary>Login</Button>
+        <Link className="ui button basic blue" to="/signup">Sing up</Link>
       </Form>
     );
   }

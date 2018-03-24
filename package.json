@@ -11,6 +11,7 @@
   "author": "Marcial Puchi",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^4.12.0",
     "lodash": "^4.17.5",
     "path": "^0.12.7",
     "prop-types": "^15.6.1",

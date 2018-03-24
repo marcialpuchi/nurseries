@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
 import LoginForm from '../components/forms/LoginForm';
+import { firebaseAuth } from '../../firebase';
 
 class LoginPage extends Component {
   submit = (data) => {
-    console.log(data);
+    firebaseAuth.signInWithEmailAndPassword(data.email, data.password).catch((err) => {
+      console.log(err);
+    });
   }
 
   render() {
